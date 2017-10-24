@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture('C:/opencv320/sources/samples/data/vtest.avi')
+cap = cv2.VideoCapture(-1)
 
 #shrink the rectangle from default
 def draw_detections(img, rects, thickness = 1):
