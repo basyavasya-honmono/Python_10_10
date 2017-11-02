@@ -1,7 +1,9 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(-1)
+cap = cv2.VideoCapture("C:/Users/A1104-Lab9/Desktop/M14018/douga/MOV_0166_s.mpg")
+
+#cap = cv2.VideoCapture(-1)
 
 #shrink the rectangle from default
 def draw_detections(img, rects, thickness = 1):
@@ -16,8 +18,10 @@ def PD_default(filename):
     hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector()) #setSVMDetector
 
     #pedestrian detection
-    found, w = hog.detectMultiScale(image, hitThreshold = 0, winStride = (8,8), padding = (0, 0), scale = 1.05, finalThreshold = 5)
-
+    #元数値
+    #found, w = hog.detectMultiScale(image, hitThreshold = 0, winStride = (8,8), padding = (0, 0), scale = 1.05, finalThreshold = 5)
+    
+    found, w = hog.detectMultiScale(image, hitThreshold = 0.27,grouthreshold=0, winStride = (8,8), padding = (0, 0), scale = 1.05, finalThreshold = 5)
     draw_detections(image, found) #draw rectangles
 
     #write & save image
